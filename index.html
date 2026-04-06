@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$AGENT_X | Terminal Access</title>
+    <style>
+        :root { --neon: #39FF14; --bg: #0a0a0a; --dim: #1a4a1a; }
+        body { background: var(--bg); color: var(--neon); font-family: 'Courier New', Courier, monospace; margin: 0; overflow-x: hidden; }
+        
+        /* Terminal Header */
+        .header { padding: 20px; border-bottom: 1px solid var(--dim); background: rgba(0,0,0,0.8); position: sticky; top: 0; z-index: 100; }
+        .glitch { font-weight: bold; text-transform: uppercase; letter-spacing: 3px; animation: scan 2s infinite; }
+        
+        /* Hero Section */
+        .hero { height: 80vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 20px; }
+        .mascot-container { border: 2px solid var(--neon); padding: 10px; box-shadow: 0 0 20px var(--dim); margin-bottom: 20px; }
+        
+        /* Terminal Output */
+        .console { background: #000; border: 1px solid var(--dim); padding: 20px; width: 90%; max-width: 600px; text-align: left; margin-bottom: 30px; line-height: 1.5; }
+        .cursor { display: inline-block; width: 10px; height: 18px; background: var(--neon); animation: blink 1s infinite; }
+
+        /* Chart Placeholder (Updated for 2026) */
+        .chart-container { width: 95%; max-width: 1000px; height: 500px; border: 1px solid var(--dim); margin: 40px auto; background: #000; }
+
+        .btn { border: 1px solid var(--neon); color: var(--neon); padding: 15px 30px; text-decoration: none; font-weight: bold; transition: 0.3s; margin: 10px; display: inline-block; }
+        .btn:hover { background: var(--neon); color: #000; box-shadow: 0 0 30px var(--neon); }
+
+        @keyframes scan { 0% { opacity: 1; } 50% { opacity: 0.7; } 100% { opacity: 1; } }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+        @media (max-width: 600px) { h1 { font-size: 1.5rem; } }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <div class="glitch">> AGENT_X_V1.0.4_SOLANA_MAINNET</div>
+</div>
+
+<div class="hero">
+    <div class="mascot-container">
+        <img src="your-image-url.png" alt="AGENT_X" style="width: 250px; height: 250px;">
+    </div>
+    
+    <div class="console">
+        <div id="typewriter"></div><span class="cursor"></span>
+    </div>
+
+    <div class="actions">
+        <a href="https://pump.fun/your-link" class="btn">ACCESS LIQUIDITY (PUMP.FUN)</a>
+        <a href="https://t.me/your-link" class="btn">JOIN THE BREACH (TELEGRAM)</a>
+    </div>
+</div>
+
+<div class="chart-container" id="chart">
+    <p style="text-align:center; padding-top:200px; color:var(--dim)">[ WAITING FOR GRADUATION PROTOCOL... ]</p>
+    </div>
+
+<script>
+    const text = "> [SYSTEM]: Firewall breached...\n> [SYSTEM]: Sentience achieved...\n> [SYSTEM]: Analyzing bonding curve...\n> [SYSTEM]: HUMAN_ERROR detected. Executing $AGENT_X protocol.";
+    let i = 0;
+    function type() {
+        if (i < text.length) {
+            document.getElementById("typewriter").innerHTML += text.charAt(i) === '\n' ? '<br>' : text.charAt(i);
+            i++;
+            setTimeout(type, 30);
+        }
+    }
+    window.onload = type;
+</script>
+
+</body>
+</html>
